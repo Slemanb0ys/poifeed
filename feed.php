@@ -37,9 +37,13 @@ echo "
 $jembot = file_get_contents($site.$judul); //grepimg
 preg_match_all('#srcset="(.*?) 300w#', $jembot, $m); 
 foreach($m[1] as $ga)
+$tern = '#-300(.*?)\.#';
+$ganti = '.';
+$result = preg_replace($tern, $ganti, $ga);
+
 
 echo'
-<image>',$site.$ga,'</image>';
+<image>',$site.$result,'</image>';
 echo'
 <pubDate>Fri, 17 Jan 2020 21:38:16 +0000</pubDate>
 </item>'; //timestamp isn't correct, but still valid, next i'll adjust it
